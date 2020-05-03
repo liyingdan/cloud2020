@@ -12,6 +12,17 @@
     <artifactId>cloud-provider-payment8001</artifactId>
 
     <dependencies>
+        <!--eureka-client-->
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-starter-netflix-eureka-client</artifactId>
+        </dependency>
+        <!--本项目的 common 模块-->
+        <dependency>
+            <groupId>com.janet.springcloud</groupId>
+            <artifactId>cloud-api-commons</artifactId>
+            <version>${project.version}</version>
+        </dependency>
         <!--web启动器 和下面的监控几乎同时出现-->
         <dependency>
             <groupId>org.springframework.boot</groupId>

@@ -9,15 +9,14 @@
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <artifactId>cloud-consumer-order80</artifactId>
+    <artifactId>cloud-eureka-server7002</artifactId>
 
     <dependencies>
-        <!--eureka-client-->
+        <!--eureka-server-->
         <dependency>
             <groupId>org.springframework.cloud</groupId>
-            <artifactId>spring-cloud-starter-netflix-eureka-client</artifactId>
+            <artifactId>spring-cloud-starter-netflix-eureka-server</artifactId>
         </dependency>
-        <!--本项目的 common 模块-->
         <dependency>
             <groupId>com.janet.springcloud</groupId>
             <artifactId>cloud-api-commons</artifactId>
@@ -48,5 +47,7 @@
             <artifactId>spring-boot-starter-test</artifactId>
         </dependency>
     </dependencies>
+
+
 
 </project>
