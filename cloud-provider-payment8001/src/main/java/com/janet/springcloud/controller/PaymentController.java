@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.*;
 
 import javax.annotation.Resource;
 import java.util.List;
+import java.util.concurrent.TimeUnit;
 
 /**
  * @Description TODO
@@ -28,7 +29,7 @@ public class PaymentController {
     @Value("${server.port}")
     private String serverPort;
 
-//    @Resource
+//    @Autowired
 //    private DiscoveryClient discoveryClient;  //服务发现
 
     @PostMapping(value = "/payment/create")
@@ -43,7 +44,7 @@ public class PaymentController {
     }
 
     @GetMapping(value = "/payment/get/{id}")
-    public CommonResult<Payment> create(@PathVariable("id") Long id){
+    public CommonResult<Payment> getPaymentById(@PathVariable("id") Long id){
         Payment payment = paymentService.getPaymentById(id);
         log.info("查询结果----"+payment);
         if(payment != null)
@@ -57,4 +58,16 @@ public class PaymentController {
     public String getPaymentLB() {
         return serverPort;
     }
+
+    //写一个延时方法，测试 OpenFeign 超时控制
+    @GetMapping(value = "/payment/feign/timeout")
+    public String paymentFeignTimeout(){
+        try {
+            TimeUnit.SECONDS.sleep(3);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+        return serverPort;
+    }
+
 }
