@@ -29,7 +29,7 @@ public class PaymentController {
     private String serverPort;
 
 //    @Resource
-//    private DiscoveryClient discoveryClient;
+//    private DiscoveryClient discoveryClient;  //服务发现
 
     @PostMapping(value = "/payment/create")
     public CommonResult<Integer> create(@RequestBody Payment payment){
@@ -51,5 +51,10 @@ public class PaymentController {
         else
             return new CommonResult(444,"没有对应字段，查询ID"+id,null);
 
+    }
+
+    @GetMapping(value = "/payment/lb")
+    public String getPaymentLB() {
+        return serverPort;
     }
 }
