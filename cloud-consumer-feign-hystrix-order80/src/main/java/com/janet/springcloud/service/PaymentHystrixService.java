@@ -6,12 +6,12 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 
 /**
- * @Description TODO
+ * @Description 此接口调用微服务 CLOUD-PROVIDER-HYSTRIX-PAYMENT 中的以下方法，服务降级方法在 PaymentFallbackService 类中
  * @Date 2020/5/7
  * @Author Janet
  */
 @Component
-@FeignClient(value = "CLOUD-PROVIDER-HYSTRIX-PAYMENT")
+@FeignClient(value = "CLOUD-PROVIDER-HYSTRIX-PAYMENT",fallback = PaymentFallbackService.class)
 public interface PaymentHystrixService {
 
     @GetMapping("/payment/hystrix/ok/{id}")
