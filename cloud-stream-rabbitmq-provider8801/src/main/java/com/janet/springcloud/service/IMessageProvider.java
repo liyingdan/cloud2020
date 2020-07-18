@@ -1,7 +1,7 @@
 package com.janet.springcloud.service;
 
 /**
- * @Description TODO
+ * @Description 发送消息接口
  * @Date 2020/5/19
  * @Author Janet
  */

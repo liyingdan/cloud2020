@@ -3,16 +3,10 @@ package com.janet.springcloud.controller;
 import com.janet.springcloud.entities.CommonResult;
 import com.janet.springcloud.entities.Payment;
 import com.janet.springcloud.service.PaymentService;
-import com.netflix.appinfo.InstanceInfo;
-import com.netflix.discovery.DiscoveryClient;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
-import org.springframework.cloud.client.ServiceInstance;
 import org.springframework.web.bind.annotation.*;
-
-import javax.annotation.Resource;
-import java.util.List;
 import java.util.concurrent.TimeUnit;
 
 /**
