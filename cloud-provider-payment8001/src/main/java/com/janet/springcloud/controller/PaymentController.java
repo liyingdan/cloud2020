@@ -64,4 +64,11 @@ public class PaymentController {
         return serverPort;
     }
 
+
+    // 测试 SpringCloud sleuth
+    @GetMapping("/payment/zipkin")
+    public String paymentZipkin(){
+        return "paymentzipkin server fallback 哈哈哈^_^";
+    }
+
 }
